@@ -1,11 +1,25 @@
-<h2 id="title">Welcome to Ember</h2>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      {{link-to 'Ember Todo-List' 'index' class="navbar-brand"}}
+    </div>
+  </div>
+</nav>
 
-<div>
-  <ul>
-  {{#each model as |list|}}
-    <li>{{link-to list.title 'lists.show.todos' list}}</li>
-  {{/each}}
-  </ul>
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <ul class="nav nav-pills nav-stacked">
+          {{#each model as |list|}}
+            <li>{{link-to list.title 'lists.show.todos' list}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="col-sm-9">
+        {{outlet}}
+      </div>
+    </div>
+  </div>
 </div>
-
-{{outlet}}
