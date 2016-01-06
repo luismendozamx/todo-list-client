@@ -1,5 +1,6 @@
 <ul>
-{{#each model as |todo|}}
+{{#each model.todos as |todo|}}
   <li>{{todo.title}}, {{todo.completed}}</li>
 {{/each}}
 </ul>
+

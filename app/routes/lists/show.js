@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel() {
-    this.transitionTo('lists.index');
+  model(params) {
+    return this.store.find('list', params.list_id);
   }
 });

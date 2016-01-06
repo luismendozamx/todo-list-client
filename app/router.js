@@ -6,8 +6,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('todos', function() {});
-  this.route('lists', function() {});
+  this.route('index', {path: '/'});
+
+  this.route('lists', {resetNamespace: true}, function() {
+    this.route('show', {path: ':list_id'}, function() {
+      this.route('todos', function() {
+        this.route('show', {path: ':todo_id'})
+      });
+    });
+  });
 });
 
 export default Router;
