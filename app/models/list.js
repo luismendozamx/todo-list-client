@@ -5,5 +5,5 @@ export default DS.Model.extend({
   title: DS.attr('string'),
 
   // Relationships
-  todos: DS.hasMany('todos')
+  todos: DS.hasMany('todos', {async: false})
 });
