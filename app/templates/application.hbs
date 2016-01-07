@@ -10,11 +10,21 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-3">
-        <ul class="nav nav-pills nav-stacked">
-          {{#each model as |list|}}
-            <li>{{link-to list.title 'lists.show.todos' list}}</li>
-          {{/each}}
-        </ul>
+
+        {{new-list
+          list=newList
+          createList='createList'
+          cancelCreateList='cancelCreateList'
+          saveList='saveList'}}
+
+        <div class="list-nav">
+          <hr>
+          <ul class="nav nav-pills nav-stacked">
+            {{#each model as |list|}}
+              <li>{{link-to list.title 'lists.show.todos' list}}</li>
+            {{/each}}
+          </ul>
+        </div>
       </div>
 
       <div class="col-sm-9">

@@ -1,0 +1,10 @@
+{{#unless isCreatingList}}
+  <button class="btn btn-success" {{action 'createList'}}>Add List</button>
+{{else}}
+  <form class="form-inline" {{action 'saveList' on='submit'}}>
+    <div class="form-group">
+      {{input value=list.title class="form-control"}}
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+{{/unless}}
