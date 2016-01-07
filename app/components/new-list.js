@@ -10,10 +10,6 @@ export default Ember.Component.extend({
       this.sendAction('createList');
     },
 
-    cancelCreateList() {
-      this.sendAction('cancelCreateList');
-    },
-
     saveList() {
       this.toggleProperty('isCreatingList');
       this.sendAction('saveList');
