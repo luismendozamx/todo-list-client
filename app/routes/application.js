@@ -7,17 +7,20 @@ export default Ember.Route.extend({
 
   actions: {
     createList() {
+      // Create list record in controller
       this.controller.set('newList', this.store.createRecord('list'));
     },
 
     saveList() {
+      // Get list from controller
       let newList = this.controller.get('newList');
 
+      // Save list
       newList.save().then(() => {
         this.controller.set('newList', null);
         this.transitionTo('lists.show.todos', newList);
       }, () => {
-        console.log('Error saving list');
+        alert('Error saving list');
       });
     }
   }

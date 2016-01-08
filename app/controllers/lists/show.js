@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
         this.model.destroyRecord().then(() => {
           this.transitionToRoute('index');
         }, () => {
-          console.log('Error while deleting list');
+          alert('Error while deleting list');
         });
       }
     }
