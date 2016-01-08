@@ -21,6 +21,7 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('bower_components/bootstrap/less/bootstrap.less', {});
+  app.import('bower_components/bootstrap/dist/js/bootstrap.js', {});
 
   return app.toTree();
 };

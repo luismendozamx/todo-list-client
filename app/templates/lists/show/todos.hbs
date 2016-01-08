@@ -1,6 +1,20 @@
-<ul>
-{{#each model.todos as |todo|}}
-  <li>{{todo.title}}, {{todo.completed}}</li>
-{{/each}}
-</ul>
+<div class="row">
+  <div class="col-sm-12">
+    <button class="btn btn-info pull-right" {{action 'showTodoModal'}}>New Todo</button>
+  </div>
+</div>
+
+<div class="row">
+  {{#each model.todos as |todo|}}
+  <div class="col-sm-12">
+    {{todo.title}}, {{todo.completed}}
+  </div>
+  {{/each}}
+</div>
+
+{{new-todo-modal
+  todo=newTodo
+  cancelNewTodo='cancelNewTodo'
+  saveTodo='saveTodo'}}
+
 
