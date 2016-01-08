@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
     },
 
     saveList() {
+      // Save list
       this.model.save().then(() => {
         this.toggleProperty('isEditing');
       }, () => {
@@ -17,11 +18,14 @@ export default Ember.Controller.extend({
     },
 
     deleteList() {
-      this.model.destroyRecord().then(() => {
-        this.transitionToRoute('index');
-      }, () => {
-        console.log('Error while deleting list');
-      });
+      // Only delete if user confirms
+      if(confirm("Deleting a list will delete all it's content. Continue?")) {
+        this.model.destroyRecord().then(() => {
+          this.transitionToRoute('index');
+        }, () => {
+          console.log('Error while deleting list');
+        });
+      }
     }
   }
 });

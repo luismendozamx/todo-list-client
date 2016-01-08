@@ -11,8 +11,12 @@ export default Ember.Component.extend({
     },
 
     saveList() {
-      this.toggleProperty('isCreatingList');
-      this.sendAction('saveList');
+      if(this.get("list.title")) {
+        this.toggleProperty('isCreatingList');
+        this.sendAction('saveList');
+      } else {
+        alert("Title can't be blank");
+      }
     }
   }
 });
