@@ -20,7 +20,7 @@
           <hr>
           <ul class="nav nav-pills nav-stacked">
             {{#each model as |list|}}
-              <li>{{link-to list.title 'lists.show.todos' list}}</li>
+              <li>{{link-to list.title 'lists.show.todos' list disabled=list.isNew}}</li>
             {{/each}}
           </ul>
         </div>
