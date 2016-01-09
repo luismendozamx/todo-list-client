@@ -4,11 +4,11 @@
   </div>
 </div>
 
+<br />
+
 <div class="row">
   {{#each model.todos as |todo|}}
-  <div class="col-sm-12">
-    {{todo.title}}, {{todo.completed}}
-  </div>
+    {{todo-view todo=todo}}
   {{/each}}
 </div>
 

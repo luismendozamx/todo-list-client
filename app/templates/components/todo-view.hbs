@@ -1,0 +1,16 @@
+<div class="panel {{cssClass}}">
+  <div class="panel-body">
+    <div class="col-sm-1">
+      <form class="form">
+        <div class="checkbox">
+          <div class="hidden">{{todoStatus}}</div>
+          {{input checked=todo.completed type='checkbox'}}
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-9">
+      <h5>{{todo.title}}</h5>
+      <p>{{todo.description}}</p>
+    </div>
+  </div>
+</div>
