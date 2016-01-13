@@ -20,7 +20,13 @@ export default Ember.Component.extend({
       let todo = this.get('todo');
 
       if(todo.get('hasDirtyAttributes') && !todo.get('isNew')) {
-        todo.save();
+        this.sendAction('updateTodo', todo);
+      }
+    },
+
+    deleteTodo(todo) {
+      if(confirm("Delete todo?")) {
+        this.sendAction('deleteTodo', todo);
       }
     }
   }

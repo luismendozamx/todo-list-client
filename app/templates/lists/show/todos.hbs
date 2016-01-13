@@ -8,7 +8,9 @@
 
 <div class="row">
   {{#each model.todos as |todo|}}
-    {{todo-view todo=todo}}
+    {{todo-view todo=todo
+      updateTodo='updateTodo'
+      deleteTodo='deleteTodo'}}
   {{/each}}
 </div>
 

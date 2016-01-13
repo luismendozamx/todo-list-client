@@ -39,6 +39,19 @@ export default Ember.Route.extend({
       }, () => {
         alert('Error while saving todo');
       });
+    },
+
+    updateTodo(todo) {
+      // Update todo
+      todo.save();
+    },
+
+    deleteTodo(todo) {
+      todo.destroyRecord().then(() => {
+        console.log('Todo deleted');
+      }, () => {
+        alert('Error while deleting todo');
+      });
     }
   }
 });
