@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('lists', {resetNamespace: true}, function() {
     this.route('show', {path: ':list_id'}, function() {
       this.route('todos', function() {
-        this.route('show', {path: ':todo_id'})
+        this.route('show', {path: ':todo_id'});
       });
     });
   });
